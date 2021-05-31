@@ -27,6 +27,10 @@ public class Postagem {
 	@JsonIgnoreProperties ("postagem")
 	private Tema tema;
 	
+	@ManyToOne
+	@JsonIgnoreProperties ("postagem")
+	private Usuario usuario;
+	
 	@NotNull
 	@Size(min = 5, max = 50)
 	private String titulo;
@@ -77,6 +81,14 @@ public class Postagem {
 
 	public void setTema(Tema tema) {
 		this.tema = tema;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 }
